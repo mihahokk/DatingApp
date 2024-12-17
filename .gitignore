@@ -484,3 +484,7 @@ $RECYCLE.BIN/
 *.swp
 API/appsettings.json
 .vscode/settings.json
+API/dating.db-wal
+API/dating.db-shm
+API/dating.db-wal
+.gitignore
