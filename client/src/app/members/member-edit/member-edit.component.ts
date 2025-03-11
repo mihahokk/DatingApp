@@ -6,6 +6,7 @@ import {GalleryComponent} from "ng-gallery";
 import {TabsModule} from "ngx-bootstrap/tabs";
 import {FormsModule, NgForm} from "@angular/forms";
 import {ToastrService} from "ngx-toastr";
+import {PhotoEditorComponent} from "../photo-editor/photo-editor.component";
 
 @Component({
   selector: 'app-member-edit',
@@ -14,6 +15,7 @@ import {ToastrService} from "ngx-toastr";
     GalleryComponent,
     TabsModule,
     FormsModule,
+    PhotoEditorComponent,
   ],
   templateUrl: './member-edit.component.html',
   styleUrl: './member-edit.component.css'
@@ -48,5 +50,9 @@ export class MemberEditComponent implements OnInit {
     })
     this.toastr.success("Profile updated successfully.");
     this.editForm?.reset(this.member);
+  }
+
+  onMemberChange(event: Member) {
+    this.member = event;
   }
 }
