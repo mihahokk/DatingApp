@@ -45,7 +45,7 @@ public class AccountController(DataContext context, ITokenService tokenService) 
             .Include(u => u.Photos)
             .FirstOrDefaultAsync(x =>
                 x.UserName == loginDto.Username.ToLower());
-        if (user == null) return Unauthorized("Invalid user of password");
+        if (user == null) return Unauthorized("Invalid user");
 
         using var hmac = new HMACSHA512(user.PasswordSalt);
 
